@@ -7,7 +7,7 @@ However, a practical model for eutrophication control and prediction is very dif
 
 	Dataset used in this study:
 	
-![Screenshot](https://github.com/jr198868/Ran-Raymond-Jing-CV/raw/master/materials/Graphic_abstract_3.jpg)
+![Screenshot](https://github.com/jr198868/Compression-of-16s-rRNA-sequence-by-using-enhanced-run-length-encoding/materials/pic//Graphic_abstract_5.jpg)
 
 ##### Standard of Procedure:
 
