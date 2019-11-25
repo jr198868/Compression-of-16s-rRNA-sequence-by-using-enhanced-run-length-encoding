@@ -1,1 +1,91 @@
 
+data = ['ccatg']
+# put the 16s-rRNA sequence data here: the format should be the clean sequence. The sequence should be separated by a comma without the bacterial name
+
+res = ''
+seq_data_clean = []
+
+for char in data:
+  for i in char:
+    if i in ['a', 't', 'g', 'c']:
+      res += i
+  seq_data_clean.append(res)
+  res = ''
+#print(seq_data_clean)
+# Sequence cleaning 
+
+encoding = ''
+prev_char = ''
+count = 1
+final_seq_data = []
+
+for char in seq_data_clean:
+  encoding = ''
+  for i in char:
+    if i not in prev_char:
+      if prev_char:
+          encoding += prev_char + str(count)
+      count = 1
+      prev_char = i
+    else:
+      count += 1 
+  else:
+    encoding += prev_char + str(count)
+    prev_char = ''
+    final_seq_data.append(encoding)
+print(final_seq_data)
+# Run-length encoding and append the encoded data into the final_seq_data 
+
+# After running the code, the size of the compressed DNA sequence is much higher than that of the raw sequence data. So the algorithms need to be modified and enhanced.  
+
+# The following is the modified (enhanced) Run-length encoding
+tem_seq = ''
+tem_seq_clean = []
+
+for char in final_seq_data:
+  tem_seq = ''
+  for i in char:
+    if i != '1':
+      tem_seq += i
+    else:
+      continue
+  tem_seq_clean.append(tem_seq)
+print(tem_seq_clean)
+
+# The following is the level II encoding for the sequence compression
+import collections
+tem_seq_clean = '#####'
+#put the encoded data here: (The code has not been optimized, so just put single data here)
+
+#Find the commonly repeated subsequence with 6 characters
+sequences = collections.defaultdict(int) 
+for i in range(len(tem_seq_clean)):
+    sequences[tem_seq_clean[i:i+6]] += 1
+#print([key for key, value in sequences.items() if value > 1])
+
+key_dic = [key for key, value in sequences.items() if value > 1]
+print(key_dic)
+
+#Construct the index (str(i) +'*') which will be used to "encode" the repeated sequences
+index_dic = []
+for i in range(len(key_dic)):
+  index = str(i) +'*'
+  index_dic.append(index)
+print(index_dic)
+
+#Construct a dictionary. The keys are the commonly repeated subsequence which was calculated before. The values are the index from above, which will be used to replace the repeated sequences in the tem_seq_clean
+index_hash = {}
+for i in range(len(key_dic)):
+  for j in range(len(index_dic)):
+    if key_dic[i] not in index_hash:
+      index_hash[key_dic[i]] = index_dic[j]
+      i += 1
+      j += 1
+  
+print(index_hash)
+
+for i in index_hash:
+    if i in tem_seq_clean:
+      s = tem_seq_clean.replace(i, index_hash[i])
+      print(s)
+#(The code has not been optimized)
