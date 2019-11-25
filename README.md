@@ -8,6 +8,10 @@
 
 ![Screenshot](https://github.com/jr198868/Compression-of-16s-rRNA-sequence-by-using-enhanced-run-length-encoding/raw/master/materials/Graphic_abstract_6.jpg)
 
+##### Encoding code: https://github.com/jr198868/Compression-of-16s-rRNA-sequence-by-using-enhanced-run-length-encoding/blob/master/code/Enhanced%20run-length%20encoding%20code
+
+##### Decoding code:
+
 ##### Standard of Procedure:
 
 	Step 1: Sequence cleaning 
