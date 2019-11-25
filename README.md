@@ -7,6 +7,7 @@ However, a practical model for eutrophication control and prediction is very dif
 
 	
 ![Screenshot](https://github.com/jr198868/Compression-of-16s-rRNA-sequence-by-using-enhanced-run-length-encoding/materials/pic/Graphic_abstract_5.jpg)
+
 ![Screenshot](https://github.com/jr198868/Compression-of-16s-rRNA-sequence-by-using-enhanced-run-length-encoding/materials/pic/Graphic_abstract_6.jpg)
 
 ##### Standard of Procedure:
